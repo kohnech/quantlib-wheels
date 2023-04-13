@@ -26,4 +26,8 @@ jobs:
         CIBW_TEST_COMMAND: python {package}/test/QuantLibTestSuite.py
       with:
         package-dir: QuantLib-SWIG-1.*/Python
-
+    - name: Save wheels as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: wheels-linux-${{ matrix.image }}-${{ matrix.arch }}
+        path: ./wheelhouse/*.whl
