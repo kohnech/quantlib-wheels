@@ -17,8 +17,7 @@ jobs:
     - name: Build QuantLib wheels
       uses: pypa/cibuildwheel@v2.11.1
       env:
-        CIBW_BUILD: "*-${{ matrix.image }}*"
-        CIBW_SKIP: cp36-*
+        CIBW_BUILD: cp38-*
         CIBW_ARCHS_LINUX: ${{ matrix.arch }}
         CIBW_BUILD_VERBOSITY: 3
         CIBW_BEFORE_ALL_LINUX: ./before_all_linux.sh
